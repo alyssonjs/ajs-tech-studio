@@ -21,12 +21,12 @@ export type Project = {
 export const projects: Project[] = [
   {
     slug: "mercado-facil",
-    title: "Mercado Fácil",
+    title: "Sushi Fácil",
     subtitle: "Aplicação web em produção",
     summary: "Projeto full stack deployado na Vercel. Aplicação moderna com interface responsiva e experiência de uso fluida.",
     category: ["Plataforma Web", "E-commerce"],
     stack: ["React", "Vite", "TypeScript", "Tailwind CSS", "Vercel"],
-    coverImage: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+    coverImage: "/images/mercado-facil-cover.png",
     featured: true,
     year: "2025",
     role: "Desenvolvedor Full Stack",
