@@ -1,6 +1,6 @@
 import { useParams, Link } from "react-router";
 import { Helmet } from "react-helmet-async";
-import { ArrowLeft, ArrowRight, CheckCircle2 } from "lucide-react";
+import { ArrowLeft, ArrowRight, CheckCircle2, ExternalLink } from "lucide-react";
 import { motion } from "motion/react";
 import { projects } from "../data/projects";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
@@ -187,6 +187,17 @@ export function ProjectDetailPage() {
         <div className="absolute inset-0 bg-gradient-to-br from-secondary/50 to-transparent" />
         <div className="h-px absolute top-0 left-0 right-0 bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
         <AnimatedSection className="relative max-w-3xl mx-auto text-center">
+          {project.liveUrl && (
+            <a
+              href={project.liveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center gap-2 bg-gradient-to-r from-primary to-blue-600 text-white px-8 py-3.5 rounded-2xl hover:shadow-xl hover:shadow-primary/25 transition-all hover:-translate-y-0.5 mb-6"
+              style={{ fontSize: 15, fontWeight: 600 }}
+            >
+              Visitar site <ExternalLink size={18} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+            </a>
+          )}
           <h2 style={{ fontSize: 32, fontWeight: 700, fontFamily: "'Manrope', sans-serif", letterSpacing: "-0.02em" }} className="mb-4">
             Interessado em construir algo{" "}
             <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">similar?</span>
@@ -196,7 +207,7 @@ export function ProjectDetailPage() {
           </p>
           <Link
             to="/contact"
-            className="group inline-flex items-center gap-2 bg-gradient-to-r from-primary to-blue-600 text-white px-8 py-3.5 rounded-2xl hover:shadow-xl hover:shadow-primary/25 transition-all hover:-translate-y-0.5"
+            className="group inline-flex items-center gap-2 border-2 border-primary text-primary px-8 py-3.5 rounded-2xl hover:bg-primary hover:text-white transition-all hover:-translate-y-0.5"
             style={{ fontSize: 15, fontWeight: 600 }}
           >
             Entre em Contato <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />

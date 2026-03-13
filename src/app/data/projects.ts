@@ -14,9 +14,29 @@ export type Project = {
   solution: string;
   responsibilities: string[];
   results: string[];
+  /** URL do projeto em produção (ex.: Vercel). Exibe botão "Visitar site" na página do case. */
+  liveUrl?: string;
 };
 
 export const projects: Project[] = [
+  {
+    slug: "mercado-facil",
+    title: "Mercado Fácil",
+    subtitle: "Aplicação web em produção",
+    summary: "Projeto full stack deployado na Vercel. Aplicação moderna com interface responsiva e experiência de uso fluida.",
+    category: ["Plataforma Web", "E-commerce"],
+    stack: ["React", "Vite", "TypeScript", "Tailwind CSS", "Vercel"],
+    coverImage: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+    featured: true,
+    year: "2025",
+    role: "Desenvolvedor Full Stack",
+    clientType: "Projeto próprio / Portfólio",
+    challenge: "Construir uma aplicação web completa, com boa UX e deploy em produção, demonstrando domínio do ciclo completo de desenvolvimento.",
+    solution: "Desenvolvimento da aplicação com React e Vite, estilização com Tailwind CSS e deploy automatizado na Vercel com URL pública e HTTPS.",
+    responsibilities: ["Desenvolvimento frontend", "Configuração de build e deploy", "Interface responsiva e acessível"],
+    results: ["Site em produção com URL pública", "Deploy contínuo na Vercel", "Projeto disponível como referência no portfólio"],
+    liveUrl: "https://mercado-facil-mauve.vercel.app/",
+  },
   {
     slug: "plataforma-pagamentos-fintech",
     title: "Plataforma de Pagamentos Fintech",
