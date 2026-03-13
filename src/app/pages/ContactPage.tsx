@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useSearchParams } from "react-router";
 import { Helmet } from "react-helmet-async";
-import { Github, Linkedin, Mail, Send, FileText, ArrowUpRight, CheckCircle2 } from "lucide-react";
+import { Github, Linkedin, Mail, Send, FileText, ArrowUpRight, CheckCircle2, Phone } from "lucide-react";
 import { motion } from "motion/react";
 import { AnimatedSection } from "../components/AnimatedSection";
 import { HeroGradient } from "../components/GradientBackground";
@@ -42,6 +42,12 @@ export function ContactPage() {
       label: "Email",
       value: siteLinks.email,
       href: `mailto:${siteLinks.email}`,
+    },
+    {
+      icon: Phone,
+      label: "Telefone",
+      value: siteLinks.phone,
+      href: `tel:${siteLinks.phone.replace(/\s/g, "")}`,
     },
     {
       icon: Github,

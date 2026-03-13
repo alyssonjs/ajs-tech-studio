@@ -1,8 +1,8 @@
 import { Link } from "react-router";
 import { Helmet } from "react-helmet-async";
-import { ArrowRight, Briefcase } from "lucide-react";
+import { ArrowRight, Briefcase, GraduationCap } from "lucide-react";
 import { motion } from "motion/react";
-import { experiences } from "../data/experience";
+import { experiences, education } from "../data/experience";
 import { AnimatedSection, AnimatedStagger, AnimatedStaggerChild } from "../components/AnimatedSection";
 import { HeroGradient } from "../components/GradientBackground";
 
@@ -11,7 +11,7 @@ export function ExperiencePage() {
     <div>
       <Helmet>
         <title>Experience | AJS Tech Studio</title>
-        <meta name="description" content="8+ years building web applications, technical leadership and delivery for companies of all sizes. Credentials, SaaS, fintech, e-commerce." />
+        <meta name="description" content="6+ years building web applications. Tarmac, Pontomais, Tracking Trade. Ruby on Rails, React, Vue, GraphQL and product delivery." />
         <meta property="og:title" content="Experience | AJS Tech Studio" />
         <meta property="og:description" content="Professional experience in software development, Rails, React and product delivery." />
       </Helmet>
@@ -26,7 +26,7 @@ export function ExperiencePage() {
               <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Profissional</span>
             </h1>
             <p className="text-muted-foreground mt-5 max-w-2xl mx-auto" style={{ fontSize: 17, lineHeight: 1.7 }}>
-              8+ anos construindo aplicações web, liderando decisões técnicas e entregando resultados para empresas de todos os tamanhos.
+              6+ anos construindo aplicações web, com passagem por Tarmac, Pontomais e Tracking Trade.
             </p>
           </AnimatedSection>
         </div>
@@ -101,6 +101,35 @@ export function ExperiencePage() {
               ))}
             </AnimatedStagger>
           </div>
+        </div>
+      </section>
+
+      {/* Education */}
+      <section className="pb-24 md:pb-32 px-6">
+        <div className="max-w-4xl mx-auto">
+          <AnimatedSection>
+            <p className="text-primary mb-2" style={{ fontSize: 13, fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase" }}>Formação</p>
+            <h2 style={{ fontSize: 28, fontWeight: 700, fontFamily: "'Manrope', sans-serif", letterSpacing: "-0.02em" }} className="mb-10">
+              Educação
+            </h2>
+            <div className="space-y-6">
+              {education.map((edu, i) => (
+                <div
+                  key={i}
+                  className="flex gap-4 bg-white border border-border/60 rounded-2xl p-6 hover:shadow-xl hover:shadow-primary/5 hover:border-primary/15 transition-all"
+                >
+                  <div className="w-10 h-10 bg-gradient-to-br from-primary/10 to-accent/10 rounded-xl flex items-center justify-center shrink-0">
+                    <GraduationCap size={18} className="text-primary" />
+                  </div>
+                  <div>
+                    <h3 style={{ fontSize: 17, fontWeight: 600, fontFamily: "'Manrope', sans-serif" }}>{edu.degree}</h3>
+                    <p className="text-muted-foreground mt-0.5" style={{ fontSize: 14 }}>{edu.institution}</p>
+                    <p className="text-primary mt-1" style={{ fontSize: 13, fontWeight: 500 }}>{edu.period}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </AnimatedSection>
         </div>
       </section>
 

@@ -1,8 +1,9 @@
 import { Link } from "react-router";
 import { Helmet } from "react-helmet-async";
-import { ArrowRight, Code2, Server, Layout, Puzzle, Users, Lightbulb, Target, Zap } from "lucide-react";
+import { ArrowRight, Code2, Server, Layout, Puzzle, Users, Lightbulb, Target, Zap, GraduationCap } from "lucide-react";
 import { AnimatedSection, AnimatedStagger, AnimatedStaggerChild } from "../components/AnimatedSection";
 import { HeroGradient, SectionGradient } from "../components/GradientBackground";
+import { education } from "../data/experience";
 
 const philosophy = [
   { title: "Qualidade acima de velocidade", desc: "Código limpo, testado e manutenível. Atalhos de hoje se tornam dívida técnica amanhã." },
@@ -30,7 +31,7 @@ export function AboutPage() {
     <div>
       <Helmet>
         <title>About | AJS Tech Studio</title>
-        <meta name="description" content="Senior Full Stack Developer, 8+ years building web applications. Ruby on Rails, React/Next.js. Consulting and product development for modern businesses." />
+        <meta name="description" content="Full Stack Developer, 6+ years building web applications. Ruby on Rails, React, Vue, GraphQL. Tarmac, Pontomais, Tracking Trade." />
         <meta property="og:title" content="About | AJS Tech Studio" />
         <meta property="og:description" content="Senior Full Stack Developer. Consulting and product development focused on quality, maintainability and business impact." />
       </Helmet>
@@ -45,7 +46,7 @@ export function AboutPage() {
               <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">que importa</span>
             </h1>
             <p className="text-muted-foreground mt-6 max-w-3xl" style={{ fontSize: 18, lineHeight: 1.8 }}>
-              Sou Desenvolvedor Full Stack Sênior com 8+ anos de experiência construindo aplicações web para startups, scale-ups e empresas enterprise. Minha stack principal é Ruby on Rails e React/Next.js, e me especializo em transformar requisitos complexos de negócio em software limpo, manutenível e escalável.
+              Sou Desenvolvedor Full Stack com 6+ anos de experiência construindo aplicações web. Atuei na Tarmac, Pontomais e Tracking Trade. Minha stack principal é Ruby on Rails, React, Vue e GraphQL, e me especializo em transformar requisitos de negócio em software limpo, manutenível e escalável.
             </p>
             <p className="text-muted-foreground mt-4 max-w-3xl" style={{ fontSize: 18, lineHeight: 1.8 }}>
               Através da <span className="text-foreground" style={{ fontWeight: 600 }}>AJS Tech Studio</span>, ofereço serviços de consultoria e desenvolvimento focados em ajudar empresas a construir, modernizar e escalar seus produtos digitais.
@@ -105,6 +106,32 @@ export function AboutPage() {
               </AnimatedStaggerChild>
             ))}
           </AnimatedStagger>
+        </div>
+      </section>
+
+      {/* Formação */}
+      <section className="relative py-20 md:py-28 px-6 bg-gradient-to-b from-secondary/30 to-transparent">
+        <div className="relative max-w-4xl mx-auto">
+          <AnimatedSection>
+            <p className="text-primary mb-2" style={{ fontSize: 13, fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase" }}>Formação</p>
+            <h2 style={{ fontSize: "clamp(26px, 3vw, 36px)", fontWeight: 700, fontFamily: "'Manrope', sans-serif", letterSpacing: "-0.01em" }} className="mb-10">
+              Educação
+            </h2>
+            <div className="flex flex-col sm:flex-row gap-6">
+              {education.map((edu, i) => (
+                <div key={i} className="flex-1 flex items-start gap-4 bg-white border border-border/60 rounded-2xl p-6 hover:shadow-xl hover:shadow-primary/5 transition-all">
+                  <div className="w-10 h-10 bg-gradient-to-br from-primary/10 to-accent/10 rounded-xl flex items-center justify-center shrink-0">
+                    <GraduationCap size={18} className="text-primary" />
+                  </div>
+                  <div>
+                    <h3 style={{ fontSize: 16, fontWeight: 600, fontFamily: "'Manrope', sans-serif" }}>{edu.degree}</h3>
+                    <p className="text-muted-foreground mt-0.5" style={{ fontSize: 13 }}>{edu.institution}</p>
+                    <p className="text-primary mt-1" style={{ fontSize: 12, fontWeight: 500 }}>{edu.period}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </AnimatedSection>
         </div>
       </section>
 

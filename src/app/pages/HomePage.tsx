@@ -27,7 +27,7 @@ const differentials = [
 ];
 
 const stats = [
-  { value: 8, suffix: "+", label: "Anos de experiência" },
+  { value: 6, suffix: "+", label: "Anos de experiência" },
   { value: 30, suffix: "+", label: "Projetos entregues" },
   { value: 15, suffix: "+", label: "Clientes enterprise" },
   { value: 99, suffix: "%", label: "Satisfação dos clientes" },
