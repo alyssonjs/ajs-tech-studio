@@ -63,6 +63,17 @@ export function ProjectDetailPage() {
                 </div>
               ))}
             </div>
+            {project.liveUrl && (
+              <a
+                href={project.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 mt-8 bg-gradient-to-r from-primary to-blue-600 text-white px-6 py-3.5 rounded-xl hover:shadow-xl hover:shadow-primary/25 transition-all hover:-translate-y-0.5 font-semibold"
+                style={{ fontSize: 15 }}
+              >
+                Visitar site <ExternalLink size={18} className="opacity-90" />
+              </a>
+            )}
           </AnimatedSection>
         </div>
       </section>
